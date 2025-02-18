@@ -1,0 +1,1 @@
+sudah tidak rekomendedd

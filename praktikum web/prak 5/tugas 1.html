@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konversi Angka ke Huruf</title>
+</head>
+<body>
+    <h1>Konversi Angka ke Huruf</h1>
+    <form id="konversiForm">
+        <label for="angkaInput">Masukkan angka (0-100):</label>
+        <input type="number" id="angkaInput" min="0" max="100" required>
+        <button type="button" onclick="konversiAngka()">Konversi</button>
+    </form>
+    <p>Hasil konversi: <span id="hasilKonversi"></span></p>
+
+    <script>
+        function konversiAngka() {
+            const angkaInput = document.getElementById("angkaInput").value;
+            const hasilKonversi = document.getElementById("hasilKonversi");
+
+            if (angkaInput >= 0 && angkaInput <= 40) {
+                hasilKonversi.textContent = "E";
+            } else if (angkaInput >= 41 && angkaInput <= 55) {
+                hasilKonversi.textContent = "D";
+            } else if (angkaInput >= 56 && angkaInput <= 60) {
+                hasilKonversi.textContent = "C";
+            } else if (angkaInput >= 61 && angkaInput <= 65) {
+                hasilKonversi.textContent = "BC";
+            } else if (angkaInput >= 66 && angkaInput <= 70) {
+                hasilKonversi.textContent = "B";
+            } else if (angkaInput >= 71 && angkaInput <= 80) {
+                hasilKonversi.textContent = "AB";
+            } else if (angkaInput >= 81 && angkaInput <= 100) {
+                hasilKonversi.textContent = "A";
+            } else {
+                hasilKonversi.textContent = "Angka tidak valid. Masukkan angka antara 0 dan 100.";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validasi</title>
+</head>
+<body>
+    <form id="loginForm">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <label for="repassword">Re-enter Password:</label>
+        <input type="password" id="repassword" name="repassword" required><br>
+
+        <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+
+    <p id="error"></p>
+
+    <script>
+        function validateForm() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const repassword = document.getElementById("repassword").value;
+
+            // Validasi email
+            const email = document.getElementById("email").value;
+            // Gunakan regex untuk memvalidasi domain email
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@pens\.id$/;
+
+            if (email.match(emailPattern)) {
+                document.getElementById("error").textContent = "Email valid";
+            } else {
+                document.getElementById("error").textContent = "Email harus berakhir dengan @pens.id";
+            }
+
+            // Validasi password minimal 8 karakter
+            if (password.length < 8) {
+                document.getElementById("error").textContent = "Password harus minimal 8 karakter";
+                return;
+            }
+
+            // Validasi re-enter password
+            if (password !== repassword) {
+                document.getElementById("error").textContent = "Password tidak sama";
+                return;
+            }
+
+            // Jika semua validasi berhasil
+            document.getElementById("error").textContent = "Form berhasil divalidasi";
+        }
+    </script>
+</body>
+</html>

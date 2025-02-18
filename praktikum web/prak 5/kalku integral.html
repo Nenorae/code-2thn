@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Integral</title>
+</head>
+<body>
+    <h1>Kalkulator Integral</h1>
+    <p>Masukkan fungsi:</p>
+    <input type="text" id="fungsi" placeholder="Contoh: x^2">
+    <p>Masukkan batas bawah:</p>
+    <input type="number" id="batasBawah" placeholder="Batas bawah">
+    <p>Masukkan batas atas:</p>
+    <input type="number" id="batasAtas" placeholder="Batas atas">
+    <br>
+    <button onclick="hitungIntegral()">Hitung Integral</button>
+    <p>Hasil Integral: <span id="hasilIntegral"></span></p>
+
+    <!-- Sertakan library math.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.7.2/math.js"></script>
+
+    <script>
+        function hitungIntegral() {
+            const fungsiInput = document.getElementById("fungsi").value;
+            const batasBawah = parseFloat(document.getElementById("batasBawah").value);
+            const batasAtas = parseFloat(document.getElementById("batasAtas").value);
+
+            if (isNaN(batasBawah) || isNaN(batasAtas)) {
+                alert("Masukkan angka yang valid untuk batas bawah dan batas atas.");
+                return;
+            }
+
+            try {
+                const hasilIntegral = integral(fungsiInput, batasBawah, batasAtas);
+                document.getElementById("hasilIntegral").textContent = hasilIntegral;
+            } catch (error) {
+                alert("Masukkan fungsi yang valid. Contoh: x^2");
+            }
+        }
+
+        function integral(fungsiInput, a, b) {
+            // Mengevaluasi fungsi menggunakan math.js
+            const fungsi = math.compile(fungsiInput);
+            
+            // Menghitung integral dengan metode trapesium
+            const n = 1000; // Jumlah subinterval (semakin besar semakin akurat)
+            const h = (b - a) / n;
+            let integral = 0;
+
+            for (let i = 0; i < n; i++) {
+                const x0 = a + i * h;
+                const x1 = x0 + h;
+                integral += (h / 2) * (fungsi.evaluate({ x: x0 }) + fungsi.evaluate({ x: x1 }));
+            }
+
+            return integral;
+        }
+    </script>
+</body>
+</html>

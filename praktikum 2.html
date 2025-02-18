@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<head>
+    <title> FORM </title>
+</head>
+
+<html>
+
+<body>
+
+    <!-- ini adalah form awal -->
+    <form>
+        nama awal :<input type="text" nama="firstname"><br>
+        nama akhir :<input type="text" nama="lastname">
+    </form>
+
+    <!-- ini adalah label -->
+    <label for="fname"> first name</label>
+    <input type="text" id="fname" name="fname">
+
+    <!-- ini adalah password -->
+    <form>
+        password: <input type="password" name="pwd">
+    </form>
+
+    <!-- ini adalah radio button -->
+    <form>
+        <input type="radio" name="sex" value="male">male<br>
+        <input type="radio" name="sex" value="female">female
+    </form>
+
+    <!-- ini adalah combobox -->
+    <form action="">
+        <select name="cars">
+            <option value="volvo">volvo</option>
+            <option value="saab">saab</option>
+            <option value="fiat">fiat</option>
+            <option value="audi">audi</option>
+        </select>
+    </form>
+
+    <!-- ini adalah checkbox -->
+    <form>
+        <input type="checkbox" name="vehicle" value="bike">aku punya sepeda<br>
+        <input type="checkbox" name="vehicle" value="car">aku punya mobeels
+    </form>
+
+    <!-- ini adalah submit button -->
+    <button type="button" onclick="alert('hello mamat')"> ayo pukul aku </button><br>
+
+    <!-- ini adalah textarea -->
+    <textarea name="" id="tugad" cols="30" rows="10"> mamat makan mie goreng di wc </textarea>
+
+    <!-- tag field dan legend -->
+    <form>
+        <fieldset>
+            <legend> data diri </legend>
+            <label for="fname"> nama pertama</label><br>
+            <input type="text" id="fname" name="fname" value="john"> <br>
+            <label for="lname"> nama terakhir</label><br>
+            <input type="text" id="lname" name="lname" value="doe"> <br>
+            <label for="lname"> NIK</label><br>
+            <input type="text" id="lname" name="lname" value="doe"> <br>
+
+            <input type="submit" value="submit">
+        </fieldset>
+    </form>
+
+
+
+
+
+
+
+
+
+
+    <h2> PEMBUATAN FILE </h2>
+
+    <form>
+        nama lengkap :<input type="text" nama="txtNama" value="john"><br>
+        alamat rumah :<input type="text" nama="txtAlamat" value="gebang"><br>
+        Telepon : <input type="text" nama="txtTelepon" value="0832"><br>
+        hobi anda (boleh lebih dari 1) : <br>
+        <input type="checkbox" name="vehicle2" value="sepak bola"> balbalan <br>
+        <input type="checkbox" name="vehicle2" value="bulu tangkis"> badminton <br>
+        <input type="checkbox" name="vehicle2" value="berkebun"> tani <br>
+        <input type="checkbox" name="vehicle2" value="membaca"> baca <br>
+    </form>
+
+    <p> belajar membuat form pada tampilan website sangat muah bukan</p>
+
+
+
+</body>
+
+</html>

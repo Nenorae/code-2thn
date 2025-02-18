@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let penjualanHarian;
+        let totalPenjualan = 0;
+        document.write("Laporan Penjualan Seminggu<br>");
+        // Menggunakan perulangan untuk menghitung total penjualan
+        for (let i = 1; i <= 7; i++) {
+            penjualanHarian = parseFloat(prompt("Masukkan total belanja untuk hari ke - " + i));
+    totalPenjualan += penjualanHarian;
+            document.write("Penjualan pada hari ke-" + i + ": " + penjualanHarian +
+                "<br>");
+        }
+        document.write("----------------------<br>");
+        document.write("Total Penjualan Seminggu: " + totalPenjualan);
+    </script>
+</body>
+
+</html>

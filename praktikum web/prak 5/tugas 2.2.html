@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Sederhana</title>
+    <style>
+        input[type="number"] {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kalkulator Sederhana</h1>
+    <form id="kalkulatorForm">
+        <label for="angka1">Angka 1:</label>
+        <input type="number" id="angka1" required>
+        <br>
+        <label for="angka2">Angka 2:</label>
+        <input type="number" id="angka2" required>
+        <br>
+        <button type="button" onclick="hitung('+')">+</button>
+        <button type="button" onclick="hitung('-')">-</button>
+        <button type="button" onclick="hitung('*')">*</button>
+        <button type="button" onclick="hitung('/')">/</button>
+    </form>
+    <p>Hasil: <span id="hasil"></span></p>
+
+    <script>
+        function hitung(operator) {
+            const angka1 = parseFloat(document.getElementById("angka1").value);
+            const angka2 = parseFloat(document.getElementById("angka2").value);
+            let hasil = 0;
+
+            switch (operator) {
+                case '+':
+                    hasil = angka1 + angka2;
+                    break;
+                case '-':
+                    hasil = angka1 - angka2;
+                    break;
+                case '*':
+                    hasil = angka1 * angka2;
+                    break;
+                case '/':
+                    if (angka2 !== 0) {
+                        hasil = angka1 / angka2;
+                    } else {
+                        alert("Tidak bisa membagi dengan nol!");
+                        return;
+                    }
+                    break;
+                default:
+                    alert("Operasi tidak valid.");
+                    return;
+            }
+
+            document.getElementById("hasil").textContent = hasil;
+        }
+    </script>
+</body>
+</html>

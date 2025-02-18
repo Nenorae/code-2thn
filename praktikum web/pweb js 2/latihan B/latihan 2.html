@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konversi Nilai ke Huruf</title>
+</head>
+<body>
+    <h2>Masukkan nilai (antara 0-100):</h2>
+    <input type="number" id="nilaiInput">
+    <button onclick="konversiNilai()">Konversi</button>
+    <p>Hasil: <span id="hasilKonversi"></span></p>
+
+    <script>
+        function konversiNilai() {
+            // Mengambil input nilai dari elemen input
+            var nilai = parseInt(document.getElementById("nilaiInput").value);
+            var hasilKonversi = '';
+
+            if (nilai >= 80 && nilai <= 100) {
+                hasilKonversi = 'A';
+            } else if (nilai >= 70 && nilai <= 79) {
+                hasilKonversi = 'B';
+            } else if (nilai >= 50 && nilai <= 69) {
+                hasilKonversi = 'C';
+            } else {
+                hasilKonversi = 'D';
+            } 
+
+            // Menampilkan hasil konversi pada elemen dengan id "hasilKonversi"
+            document.getElementById("hasilKonversi").textContent = hasilKonversi;
+        }
+    </script>
+</body>
+</html>

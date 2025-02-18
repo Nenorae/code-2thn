@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firewall Login</title>
+    <script>
+        function check() {
+            if (form1.password.value.length > 7) {
+                if (form1.password2.value.length > 7) {
+                    if (form1.password.value == form1.password2.value) {
+                        if (form1.email.value == "akmal@execute.id" && form1.password.value == "akmal123") {
+                            alert("Welcome Back Administrator!");
+                        }
+                        else {
+                            alert("Email atau Password Salah!");
+                            event.preventDefault();
+                            return false;
+                        }
+                    }
+                    else {
+                        alert("Password tidak sama!");
+                        event.preventDefault();
+                        return false;
+                    }
+                }
+                else {
+                    alert("Password Konfirmasi kurang dari 8 karakter!");
+                    event.preventDefault();
+                    return false;
+                }
+            }
+            else {
+                alert("Password kurang dari 8 karakter!");
+                event.preventDefault();
+                return false;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <form id="form1" method="post" onsubmit="check()">
+        <label for="">Email</label>
+        <input type="email" name="email" id="email" required>
+        <br>
+        <label for="">Password</label>
+        <input type="password" name="password" id="password" required>
+        <br>
+        <label for="">Konfirmasi Password</label>
+        <input type="password" name="password2" id="password2" required>
+        <br>
+        <input type="submit" value="Sign In">
+    </form>
+</body>
+
+</html>

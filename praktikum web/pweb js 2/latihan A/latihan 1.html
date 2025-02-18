@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Data Pengguna</title>
+</head>
+<body>
+    <h2>Form Data Pengguna</h2>
+    <form id="userDataForm">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama"><br>
+
+        <label for="ttl">Tempat Tanggal Lahir:</label>
+        <input type="text" id="ttl" name="ttl"><br>
+
+        <label for="golonganDarah">Golongan Darah:</label>
+        <input type="text" id="golonganDarah" name="golonganDarah"><br>
+
+        <label for="alamat">Alamat:</label>
+        <input type="text" id="alamat" name="alamat"><br>
+
+        <label for="jenisKelamin">Jenis Kelamin:</label>
+        <input type="text" id="jenisKelamin" name="jenisKelamin"><br>
+
+        <label for="agama">Agama:</label>
+        <input type="text" id="agama" name="agama"><br>
+
+        <label for="statusPerkawinan">Status Perkawinan:</label>
+        <input type="text" id="statusPerkawinan" name="statusPerkawinan"><br>
+
+        <label for="pekerjaan">Pekerjaan:</label>
+        <input type="text" id="pekerjaan" name="pekerjaan"><br>
+
+        <label for="kewarganegaraan">Kewarganegaraan:</label>
+        <input type="text" id="kewarganegaraan" name="kewarganegaraan"><br>
+
+        <button type="button" onclick="getData()">Submit</button>
+    </form>
+
+    <h2>Data yang Dimasukkan:</h2>
+    <p id="displayData"></p>
+
+    <script>
+        function getData() {
+            const nama = document.getElementById("nama").value;
+            const ttl = document.getElementById("ttl").value;
+            const golonganDarah = document.getElementById("golonganDarah").value;
+            const alamat = document.getElementById("alamat").value;
+            const jenisKelamin = document.getElementById("jenisKelamin").value;
+            const agama = document.getElementById("agama").value;
+            const statusPerkawinan = document.getElementById("statusPerkawinan").value;
+            const pekerjaan = document.getElementById("pekerjaan").value;
+            const kewarganegaraan = document.getElementById("kewarganegaraan").value;
+
+            const dataDisplay = `Nama: ${nama}<br>
+                                Tempat Tanggal Lahir: ${ttl}<br>
+                                Golongan Darah: ${golonganDarah}<br>
+                                Alamat: ${alamat}<br>
+                                Jenis Kelamin: ${jenisKelamin}<br>
+                                Agama: ${agama}<br>
+                                Status Perkawinan: ${statusPerkawinan}<br>
+                                Pekerjaan: ${pekerjaan}<br>
+                                Kewarganegaraan: ${kewarganegaraan}`;
+
+            document.getElementById("displayData").innerHTML = dataDisplay;
+        }
+    </script>
+</body>
+</html>

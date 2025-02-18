@@ -1,0 +1,22 @@
+{
+  "name": "hardhat-project",
+  "version": "1.0.0",
+  "description": "A Hardhat project for deploying and testing smart contracts",
+  "main": "hardhat.config.mjs",
+  "type": "module",
+  "scripts": {
+    "test": "npx hardhat test",
+    "compile": "npx hardhat compile",
+    "deploy": "node scripts/deploy.js",
+    "accounts": "npx hardhat accounts"
+  },
+  "devDependencies": {
+    "hardhat": "^2.22.17",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "ethers": "^6.4.0",
+    "mocha": "^10.2.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
